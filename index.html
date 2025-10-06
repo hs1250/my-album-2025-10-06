@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的相簿</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body { margin: 0; background-color: #1a1a1a; font-family: sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        .swiper-button-next, .swiper-button-prev { color: #fff; }
+        .gallery-main { height: 88%; width: 100%; }
+        .gallery-main .swiper-slide { display: flex; justify-content: center; align-items: center; }
+        .gallery-main .swiper-slide img { max-width: 95%; max-height: 95%; object-fit: contain; background-color: white; border: 10px solid white; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+        .gallery-thumbs { height: 12%; box-sizing: border-box; padding: 10px 0; }
+        .gallery-thumbs .swiper-slide { width: 25%; height: 100%; opacity: 0.4; transition: opacity 0.3s; cursor: pointer; }
+        .gallery-thumbs .swiper-slide:hover { opacity: 0.7; }
+        .gallery-thumbs .swiper-slide-thumb-active { opacity: 1; }
+        .gallery-thumbs .swiper-slide img { width: 100%; height: 100%; object-fit: cover; border: 3px solid #ddd; }
+        #settings-panel { position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%); background-color: rgba(0,0,0,0.5); backdrop-filter: blur(5px); padding: 1rem; border-radius: 0.75rem; border: 2px solid #fff; z-index: 20; display: flex; gap: 1rem; align-items: center; }
+        #settings-panel label { font-weight: bold; color: white; }
+        #settings-panel select { border: 1px solid #ccc; border-radius: 4px; padding: 4px 8px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="swiper gallery-main">
+        <div class="swiper-wrapper"><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfD8dlF6a9ASQm6m5UJWisKaLVKWgP648jJSRe49NM-YfxNXuglYDdHilAZVKEjfyLsHs0H6spgnKCI9IFBZD6hoHQ9yicOCDy5wEg9QZgI2N-5zkCOgyMgEjshsabvW6UNtGCRVlsWwoe4zb-Hm_SIinyanWM-UoMha6xXY" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfD0k5p-2shlFmOxr1hOUHm59jwiGQZSS8IqboC7AqFBn8JjKsHuXjK8siMFiezfU6tQB6_8EmTWhM7O47jwLlw5bfm35vU62H0JZuzdVXZxMWB35z5C6JdkHVnSi3_F5RX67e1adXumj0ePVWTyoN4oKWwOUvheF2yVVP_G" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfCzYNKIl2zqgci7-TaV0EwTT9QYS83huxOO7FmNcda_ZstQXmD6Av6vFPIqGKu3OXpsaUFT1L_0h98Hbrfm3bKb-LLrBmEUgO7Jqgllu0JsW56pVjdqdwqgoON11pU0rAD3MRO4u860MtkxvMI2ilvAMzctJ5R5Doc6A-4f" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfAcBiB9wxEImdTRS7eSdlcLeeuYoPTgcn1HzUHHsN7bmyWQmmwhln7Xy4qgYt4WkDfBT24H7Zj4joQzjCeecbhF813W8f4yA6isXaLIfp9BKLadkcYcoZbkd9PLKIaeo78x8HXvj6MFZCFlSg1PNayhaUQNltsCJMsZK-o4" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfDJAVmc3E95fz9nFtRrIlTL_S96k3TxIB8xTn5jvny2UKBw995v9f1__f0Hrf032e-33peNjirCg0jtFpwg4ejJH93XsLKns-ugEsxiVeJSb8hwFtVGQnbblIMM3t3llcMBVpExwAQmTGAeRfG-FImCjLXR0aXI2sp5Ow" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfA7Ltg7cxBMcs2Heaz-3unwhSZUGjLBf9804kyAl0PLq1ETxDjQYh5DBMXChULU910x2NXSi-aNAmLzEd5bA8ABGs6qe7tbskvwTO2Ie2ZjfUYVQ_Yn0cTv2SIWLObJqVhrDwPBJrY5TtsE4IVseRJDWZMRhivNF6v6PJ34" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfBJlXnGLlXMg3tgHHNTB6bmSVrYxKiaNKIX16fX7oBvbivBzLbxkO_ekBPlNTLO5D6yOYJWcLmEJclCh5n0xsrJt5Z5Qrl_J6-IsXmy_4aE_Dwfpg9Bfhb5pqPHsw-QT97Hlk6kEGwNCSorEcF2Lsqy_0dCd8lzOErZOzNW" /></div></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div class="swiper gallery-thumbs">
+        <div class="swiper-wrapper"><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfD8dlF6a9ASQm6m5UJWisKaLVKWgP648jJSRe49NM-YfxNXuglYDdHilAZVKEjfyLsHs0H6spgnKCI9IFBZD6hoHQ9yicOCDy5wEg9QZgI2N-5zkCOgyMgEjshsabvW6UNtGCRVlsWwoe4zb-Hm_SIinyanWM-UoMha6xXY" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfD0k5p-2shlFmOxr1hOUHm59jwiGQZSS8IqboC7AqFBn8JjKsHuXjK8siMFiezfU6tQB6_8EmTWhM7O47jwLlw5bfm35vU62H0JZuzdVXZxMWB35z5C6JdkHVnSi3_F5RX67e1adXumj0ePVWTyoN4oKWwOUvheF2yVVP_G" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfCzYNKIl2zqgci7-TaV0EwTT9QYS83huxOO7FmNcda_ZstQXmD6Av6vFPIqGKu3OXpsaUFT1L_0h98Hbrfm3bKb-LLrBmEUgO7Jqgllu0JsW56pVjdqdwqgoON11pU0rAD3MRO4u860MtkxvMI2ilvAMzctJ5R5Doc6A-4f" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfAcBiB9wxEImdTRS7eSdlcLeeuYoPTgcn1HzUHHsN7bmyWQmmwhln7Xy4qgYt4WkDfBT24H7Zj4joQzjCeecbhF813W8f4yA6isXaLIfp9BKLadkcYcoZbkd9PLKIaeo78x8HXvj6MFZCFlSg1PNayhaUQNltsCJMsZK-o4" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfDJAVmc3E95fz9nFtRrIlTL_S96k3TxIB8xTn5jvny2UKBw995v9f1__f0Hrf032e-33peNjirCg0jtFpwg4ejJH93XsLKns-ugEsxiVeJSb8hwFtVGQnbblIMM3t3llcMBVpExwAQmTGAeRfG-FImCjLXR0aXI2sp5Ow" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfA7Ltg7cxBMcs2Heaz-3unwhSZUGjLBf9804kyAl0PLq1ETxDjQYh5DBMXChULU910x2NXSi-aNAmLzEd5bA8ABGs6qe7tbskvwTO2Ie2ZjfUYVQ_Yn0cTv2SIWLObJqVhrDwPBJrY5TtsE4IVseRJDWZMRhivNF6v6PJ34" /></div><div class="swiper-slide"><img src="https://lh7-rt.googleusercontent.com/docsd/ANYlcfBJlXnGLlXMg3tgHHNTB6bmSVrYxKiaNKIX16fX7oBvbivBzLbxkO_ekBPlNTLO5D6yOYJWcLmEJclCh5n0xsrJt5Z5Qrl_J6-IsXmy_4aE_Dwfpg9Bfhb5pqPHsw-QT97Hlk6kEGwNCSorEcF2Lsqy_0dCd8lzOErZOzNW" /></div></div>
+    </div>
+    <div id="settings-panel">
+        <label for="effect-select">效果:</label>
+        <select id="effect-select" onchange="applySettings()">
+            <option value="fade">淡入淡出</option><option value="slide">滑動</option><option value="cube">方塊</option><option value="coverflow">卡片</option><option value="flip">翻轉</option>
+        </select>
+        <label for="delay-select">秒數:</label>
+        <select id="delay-select" onchange="applySettings()">
+            <option value="3000">3秒</option><option value="2000">2秒</option><option value="5000">5秒</option><option value="8000">8秒</option>
+        </select>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let mainSwiper, thumbsSwiper;
+        const effectSelect = document.getElementById('effect-select');
+        const delaySelect = document.getElementById('delay-select');
+
+        function initSwipers(initialSlide = 0) {
+            if (mainSwiper) mainSwiper.destroy(true, true);
+            if (thumbsSwiper) thumbsSwiper.destroy(true, true);
+
+            thumbsSwiper = new Swiper('.gallery-thumbs', { spaceBetween: 10, slidesPerView: 'auto', freeMode: true, watchSlidesProgress: true });
+            
+            const effect = effectSelect.value;
+            const delay = parseInt(delaySelect.value, 10);
+            
+            const options = {
+                initialSlide, spaceBetween: 10, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                thumbs: { swiper: thumbsSwiper }, keyboard: true, effect: effect,
+                autoplay: { delay: delay, disableOnInteraction: true },
+                grabCursor: true, cubeEffect: { shadow: true, slideShadows: true, shadowOffset: 20, shadowScale: 0.94 },
+                coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
+            };
+            mainSwiper = new Swiper('.gallery-main', options);
+            mainSwiper.autoplay.start();
+        }
+        function applySettings() {
+            const currentIndex = mainSwiper ? mainSwiper.realIndex : 0;
+            initSwipers(currentIndex);
+        }
+        initSwipers(); // Initial load
+    </script>
+</body>
+</html>
